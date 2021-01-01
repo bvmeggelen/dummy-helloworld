@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
     pool
         .query('SELECT * FROM foo')
         .then(rows => {
-            res.send(JSON.stringify(rows.rows));
+            res.send(JSON.stringify({ rows: rows.rows, fuck: 'yea' }));
         })
         .catch(e => {
             console.error(e.stack);
